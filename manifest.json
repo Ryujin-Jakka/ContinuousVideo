@@ -1,0 +1,24 @@
+{
+	"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name": "Continuous Video",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Buono studio!",
+    "icons": { "16": "rj.png" },
+
+    "permissions": [
+        "tabs"
+    ],
+
+    "content_scripts":
+    [
+        {
+            "matches":  ["https://www.uninettunouniversity.net/*"],
+            "js":       ["const.js", "moment.min.js", "jquery.js", "cv.js" ],
+            "css":      ["stili.css"]
+        }
+    ],
+
+    "content_security_policy": "default-src 'self';   script-src 'self' https://platform.twitter.com;   style-src 'self' 'unsafe-inline';   img-src 'self' data: chrome: filesystem:;   connect-src 'self' http: https: chrome-extension:;   frame-src http: https:"
+}
