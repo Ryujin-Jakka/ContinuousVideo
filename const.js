@@ -5,3 +5,4 @@ const videoId = "#videojsplayer_html5_api";
 const prefix_log_1 = "durata (s): ";
 const prefix_log_2 = "Timeout - durata (ms): ";
 const prefix_log_3 = "Timeout - durata max (ms): ";
+const durataMaxInMSecs = moment.duration("00:59:00").asMilliseconds();

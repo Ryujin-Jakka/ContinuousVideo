@@ -1,24 +1,23 @@
 {
-	"update_url": "https://clients2.google.com/service/update2/crx",
+  "update_url": "https://clients2.google.com/service/update2/crx",
 
-    "name": "Continuous Video",
-    "version": "0.1",
-    "manifest_version": 2,
-    "description": "Buono studio!",
-    "icons": { "16": "rj.png" },
+  "name": "Continuous Video",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "Buono studio!",
+  "icons": { "16": "rj.png" },
 
-    "permissions": [
-        "tabs"
-    ],
+  "permissions": ["tabs"],
 
-    "content_scripts":
-    [
-        {
-            "matches":  ["https://www.uninettunouniversity.net/*"],
-            "js":       ["const.js", "moment.min.js", "jquery.js", "cv.js" ],
-            "css":      ["stili.css"]
-        }
-    ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.uninettunouniversity.net/*"],
+      "js": ["moment.min.js", "jquery.js", "const.js", "cv.js"],
+      "css": ["stili.css"]
+    }
+  ],
 
-    "content_security_policy": "default-src 'self';   script-src 'self' https://platform.twitter.com;   style-src 'self' 'unsafe-inline';   img-src 'self' data: chrome: filesystem:;   connect-src 'self' http: https: chrome-extension:;   frame-src http: https:"
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
